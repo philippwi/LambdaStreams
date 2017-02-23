@@ -56,24 +56,25 @@ public class Application {
         // sort
         //SELECT petrolType,carType,amount FROM data ORDER BY amount
 
-        Collections.sort(records, recordComparator);
-        //records.sort(recordComparator);
-
-        System.out.println(records);
+        records.stream().sorted(recordComparator)...
 
 
+        System.out.println("SELECT petrolType,carType,amount FROM data ORDER BY amount\n" + result + "\n");
     }
 
     public void execute04(){
         // sort
         //SELECT * FROM data ORDER BY stationID,amount DESC
 
+
+
+        System.out.println("SELECT * FROM data ORDER BY stationID,amount DESC\n"  + "\n");
     }
 
     public void execute05(){
         // filter
         //SELECT * FROM data WHERE (carType IN ('A','C') AND stationID <= 3)
-
+        System.out.println("SELECT * FROM data WHERE (carType IN ('A','C') AND stationID <= 3)\n"  + "\n");
     }
 
     public void execute06(){
@@ -81,30 +82,34 @@ public class Application {
         // filter and sort
         //SELECT * FROM data WHERE (carType IN ('A','B') AND stationID > 2) ORDER BY amount DESC
 
+        System.out.println("SELECT * FROM data WHERE (carType IN ('A','B') AND stationID > 2) ORDER BY amount DESC\n"  + "\n");
     }
 
     public void execute07(){
         // filter, sort and limit
         //SELECT * FROM data WHERE (carType IN ('A','C') AND stationID < 5) ORDER BY amount LIMIT 3
 
+        System.out.println("SELECT * FROM data WHERE (carType IN ('A','C') AND stationID < 5) ORDER BY amount LIMIT 3\n"  + "\n");
     }
 
     public void execute08(){
         // aggregation - count
         //SELECT COUNT(*) FROM data WHERE (carType = 'C' AND amount >= 35)
 
+        System.out.println("SELECT COUNT(*) FROM data WHERE (carType = 'C' AND amount >= 35)\n"  + "\n");
     }
 
     public void execute09(){
         // aggregation - group
         //SELECT COUNT(*),carType FROM data GROUP BY carType
 
+        System.out.println("SELECT COUNT(*),carType FROM data GROUP BY carType\n"  + "\n");
     }
-
     public void execute10(){
         // aggregation - group and filter
         //SELECT COUNT(*),petrolType FROM data WHERE (amount < 65 AND carType IN ('A','C')) GROUP BY petrolType
 
+        System.out.println("SELECT COUNT(*),petrolType FROM data WHERE (amount < 65 AND carType IN ('A','C')) GROUP BY petrolType\n"  + "\n");
     }
 
 
