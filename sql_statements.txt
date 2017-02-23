@@ -1,0 +1,29 @@
+// aggregation - average
+SELECT AVG(amount) FROM data WHERE (petrolType = 'A' AND carType = 'A')
+
+// aggregation - max
+SELECT MAX(amount) FROM data WHERE (petrolType = 'A' and dayOfWeek = 1)
+
+// sort
+SELECT petrolType,carType,amount FROM data ORDER BY amount
+
+// sort
+SELECT * FROM data ORDER BY stationID,amount DESC
+
+// filter
+SELECT * FROM data WHERE (carType IN ('A','C') AND stationID <= 3)
+
+// filter and sort
+SELECT * FROM data WHERE (carType IN ('A','B') AND stationID > 2) ORDER BY amount DESC
+
+// filter, sort and limit
+SELECT * FROM data WHERE (carType IN ('A','C') AND stationID < 5) ORDER BY amount LIMIT 3
+
+// aggregation - count
+SELECT COUNT(*) FROM data WHERE (carType = 'C' AND amount >= 35)
+
+// aggregation - group
+SELECT COUNT(*),carType FROM data GROUP BY carType
+
+// aggregation - group and filter
+SELECT COUNT(*),petrolType FROM data WHERE (amount < 65 AND carType IN ('A','C')) GROUP BY petrolType
